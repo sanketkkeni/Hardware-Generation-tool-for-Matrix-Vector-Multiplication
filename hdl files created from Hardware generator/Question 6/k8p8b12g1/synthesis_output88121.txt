@@ -1,0 +1,898 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.41;
+1.41
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "mvm_8_8_12_1";
+mvm_8_8_12_1
+set SRC_FILE "s_thakkar_mvm_8_8_12_1.sv";
+s_thakkar_mvm_8_8_12_1.sv
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./s_thakkar_mvm_8_8_12_1.sv
+Compiling source file ./s_thakkar_mvm_8_8_12_1.sv
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'mvm_8_8_12_1'.
+Information: Building the design 'datapath'. (HDL-193)
+
+Inferred memory devices in process
+	in routine datapath line 64 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        f_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f1_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f2_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f3_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f4_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f5_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f5_reg        | Flip-flop |  21   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f6_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f7_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f8_reg        | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ctrlpath'. (HDL-193)
+
+Inferred memory devices in process
+	in routine ctrlpath line 117 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 125 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      done_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 132 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a1_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 141 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a2_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 150 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a3_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 159 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a4_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 168 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a5_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 177 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a6_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 186 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a7_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 195 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a8_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 204 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_x_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 211 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_y_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 220 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    clear_acc_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 227 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       clc_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 234 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      clc1_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath' with
+	the parameters "12,8,3". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH12_SIZE8_LOGSIZE3 line 28 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================================
+|         block name/line          | Inputs | Outputs | # sel inputs | MB |
+===========================================================================
+| memory_WIDTH12_SIZE8_LOGSIZE3/29 |   8    |   12    |      3       | N  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath' with
+	the parameters "24,8,3". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH24_SIZE8_LOGSIZE3 line 28 in file
+		'./s_thakkar_mvm_8_8_12_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================================
+|         block name/line          | Inputs | Outputs | # sel inputs | MB |
+===========================================================================
+| memory_WIDTH24_SIZE8_LOGSIZE3/29 |   8    |   24    |      3       | N  |
+===========================================================================
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset loadMatrix loadVector start data_in[11] data_in[10] data_in[9] data_in[8] data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{loadMatrix loadVector start data_in[11] data_in[10] data_in[9] data_in[8] data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+#set_input_delay 1 -max -clock clk $INPUTS
+#set_output_delay 1 -max -clock clk [all_outputs]
+# rule of thumb: 20% of clock period
+###### OPTIMIZATION #######
+set_max_area 0 
+1
+###### RUN #####
+compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2 |   *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2 |   *     |
+============================================================================
+
+
+Information: There are 22 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'ctrlpath'
+Information: Added key list 'DesignWare' to design 'ctrlpath'. (DDB-72)
+  Processing 'memory_WIDTH24_SIZE8_LOGSIZE3'
+  Processing 'memory_WIDTH12_SIZE8_LOGSIZE3_0'
+  Processing 'datapath'
+  Processing 'mvm_8_8_12_1'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'datapath_DW01_add_0'
+  Mapping 'datapath_DW_mult_tc_0'
+  Processing 'datapath_DW01_add_1'
+  Mapping 'datapath_DW_mult_tc_1'
+  Processing 'datapath_DW01_add_2'
+  Mapping 'datapath_DW_mult_tc_2'
+  Processing 'datapath_DW01_add_3'
+  Mapping 'datapath_DW_mult_tc_3'
+  Processing 'datapath_DW01_add_4'
+  Mapping 'datapath_DW_mult_tc_4'
+  Processing 'datapath_DW01_add_5'
+  Mapping 'datapath_DW_mult_tc_5'
+  Processing 'datapath_DW01_add_6'
+  Mapping 'datapath_DW_mult_tc_6'
+  Processing 'datapath_DW01_add_7'
+  Mapping 'datapath_DW_mult_tc_7'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:10   24699.4      0.81      43.5      25.7 d/*cell*18052/U3/ZN      
+    0:00:10   24699.4      0.81      43.5      25.7 d/*cell*18052/U3/ZN      
+    0:00:10   24557.9      0.48      34.8      25.7 d/*cell*18052/*cell*18124/ZN
+    0:00:10   24459.0      0.36      32.0      38.0 d/*cell*18052/U471/Z     
+    0:00:10   24396.7      0.33      31.4      31.9 d/*cell*18052/U472/ZN    
+    0:00:10   24316.4      0.30      32.4      31.9 d/*cell*18052/U218/S     
+    0:00:10   24272.5      0.27      31.8      31.9 d/*cell*18052/U122/ZN    
+    0:00:10   24227.0      0.27      31.4      31.9 d/*cell*18052/U240/S     
+    0:00:10   24168.2      0.27      30.1      31.9 d/*cell*18052/*cell*18299/ZN
+    0:00:10   24154.1      0.27      30.2      31.9 d/*cell*18052/*cell*18497/ZN
+    0:00:11   24143.8      0.27      30.1      31.9 d/*cell*18052/U434/Z     
+    0:00:11   24138.7      0.27      30.1      31.9 d/*cell*18052/U460/Z     
+    0:00:11   24127.5      0.27      30.1      31.9 d/*cell*18052/*cell*18526/ZN
+    0:00:11   24124.1      0.27      30.1      31.9 d/*cell*18052/*cell*18449/ZN
+    0:00:11   24116.6      0.27      30.1      31.9 d/*cell*18052/*cell*18478/ZN
+    0:00:11   24111.8      0.27      30.1      31.9 d/*cell*18052/*cell*18554/ZN
+    0:00:11   24089.0      0.27      30.1      25.7 d/*cell*18052/U194/CO    
+    0:00:11   24374.9      0.85      38.0      25.7 d/*cell*18623/U187/ZN    
+    0:00:11   24271.7      0.50      35.1      25.7 d/*cell*18623/*cell*18709/ZN
+    0:00:11   24208.1      0.38      32.9      25.7 d/*cell*18623/*cell*18749/Z
+    0:00:11   24116.6      0.28      31.4      25.7 d/*cell*18623/*cell*18729/ZN
+    0:00:12   24075.4      0.27      30.7      25.7 d/*cell*18623/*cell*18698/ZN
+    0:00:12   23974.3      0.27      29.5      25.7 d/*cell*18623/*cell*18962/ZN
+    0:00:12   23939.2      0.27      29.3      25.7 d/*cell*18623/U212/S     
+    0:00:12   23921.9      0.27      28.2      25.7 d/*cell*18623/U170/ZN    
+    0:00:12   23913.1      0.27      28.3      25.7 d/*cell*18623/*cell*18899/ZN
+    0:00:12   23901.4      0.27      28.2      25.7 d/*cell*18623/*cell*19101/Z
+    0:00:12   23897.2      0.27      28.2      25.7 d/*cell*18623/U454/Z     
+    0:00:12   23892.9      0.27      28.1      25.7 d/*cell*18623/*cell*18846/ZN
+    0:00:12   23888.4      0.27      28.1      25.7 d/*cell*18623/*cell*19030/ZN
+    0:00:12   23883.6      0.27      28.1      25.7 d/*cell*18623/U198/CO    
+    0:00:12   23852.0      0.27      28.1      25.7 d/*cell*18623/*cell*18756/ZN
+    0:00:12   23839.2      0.27      28.1      25.7 d/*cell*18623/*cell*19178/ZN
+    0:00:12   24159.2      0.92      40.3      25.7 d/*cell*19194/U51/Z      
+    0:00:13   23966.9      0.54      31.5      25.7 d/*cell*19194/U458/Z     
+    0:00:13   23857.8      0.31      29.6      41.7 d/*cell*19194/U444/Z     
+    0:00:13   23796.1      0.27      29.0      41.7 d/*cell*19194/U208/S     
+    0:00:13   23692.6      0.27      27.1      41.7 d/*cell*19194/*cell*19521/Z
+    0:00:13   23661.8      0.27      26.4      41.7 d/*cell*19194/*cell*19374/Z
+    0:00:13   23628.0      0.27      26.1      41.7 d/*cell*19194/*cell*19377/ZN
+    0:00:13   23613.1      0.27      26.1      41.7 d/*cell*19194/*cell*19615/Z
+    0:00:13   23602.4      0.27      26.1      41.7 d/*cell*19194/*cell*19261/ZN
+    0:00:13   23599.5      0.26      25.9      25.7 d/*cell*19194/*cell*19569/Z
+    0:00:13   23585.2      0.26      25.9      25.7 d/*cell*19194/*cell*19278/ZN
+    0:00:13   23578.8      0.26      25.9      25.7 d/*cell*19194/*cell*19489/ZN
+    0:00:14   23573.7      0.26      25.9      25.7 d/*cell*19194/*cell*19328/ZN
+    0:00:14   23570.0      0.26      25.9      25.7 d/*cell*19194/*cell*19305/ZN
+    0:00:14   23557.8      0.26      25.9      25.7 d/*cell*19194/*cell*19621/ZN
+    0:00:14   23888.7      0.96      38.1      25.7 d/*cell*19749/U4/ZN      
+    0:00:14   23705.7      0.59      29.4      25.7 d/*cell*19749/U456/Z     
+    0:00:14   23600.6      0.35      27.1      25.7 d/*cell*19749/U448/Z     
+    0:00:14   23522.9      0.28      27.1      25.7 d/*cell*19749/*cell*20021/Z
+    0:00:14   23476.4      0.27      26.8      25.7 d/*cell*19749/U219/S     
+    0:00:14   23426.1      0.27      26.3      25.7 d/*cell*19749/U247/S     
+    0:00:14   23370.0      0.27      25.6      25.7 d/*cell*19749/*cell*19981/ZN
+    0:00:15   23340.4      0.27      24.6      25.7 d/*cell*19749/U171/ZN    
+    0:00:15   23329.3      0.27      24.6      25.7 d/*cell*19749/*cell*20056/Z
+    0:00:15   23326.3      0.27      24.6      25.7 d/*cell*19749/*cell*20015/ZN
+    0:00:15   23317.6      0.27      24.6      25.7 d/*cell*19749/U241/S     
+    0:00:15   23296.3      0.27      24.6      25.7 d/*cell*19749/*cell*20251/Z
+    0:00:15   23289.6      0.27      24.6      25.7 d/*cell*19749/*cell*20248/ZN
+    0:00:15   23281.4      0.27      24.6      25.7 d/*cell*19749/*cell*20098/ZN
+    0:00:15   23268.3      0.27      24.6      25.7 d/*cell*19749/*cell*20136/ZN
+    0:00:15   23574.2      0.82      35.7      25.7 d/*cell*20295/U3/ZN      
+    0:00:15   23433.0      0.50      29.1      25.7 d/*cell*20295/*cell*20317/ZN
+    0:00:15   23309.3      0.35      25.9      47.9 d/*cell*20295/U457/Z     
+    0:00:16   23257.4      0.31      27.5      47.9 d/*cell*20295/U212/S     
+    0:00:16   23193.1      0.29      26.9      47.9 d/*cell*20295/U203/S     
+    0:00:16   23122.0      0.29      26.0      41.7 d/*cell*20295/U106/ZN    
+    0:00:16   23078.4      0.29      25.5      41.7 d/*cell*20295/*cell*20611/ZN
+    0:00:16   23047.0      0.29      24.8      41.7 d/*cell*20295/*cell*20676/ZN
+    0:00:16   23036.9      0.29      24.7      41.7 d/*cell*20295/U431/Z     
+    0:00:16   23032.9      0.29      24.7      41.7 d/*cell*20295/*cell*20493/ZN
+    0:00:16   23030.5      0.29      24.7      25.7 d/*cell*20295/*cell*20549/ZN
+    0:00:16   23023.9      0.29      24.7      25.7 d/*cell*20295/*cell*20486/ZN
+    0:00:16   23020.7      0.29      24.7      25.7 d/*cell*20295/*cell*20365/ZN
+    0:00:16   22998.6      0.29      24.7      25.7 d/*cell*20295/U191/CO    
+    0:00:16   22977.6      0.29      24.7      25.7 d/*cell*20295/*cell*20820/ZN
+    0:00:16   22956.3      0.29      24.7      25.7 d/*cell*20295/*cell*20814/ZN
+    0:00:17   23174.2      0.51      29.8      25.7 d/*cell*20848/U439/Z     
+    0:00:17   23055.8      0.36      26.8      25.7 d/*cell*20848/*cell*20922/Z
+    0:00:17   22952.3      0.30      25.8      25.7 d/*cell*20848/U270/ZN    
+    0:00:17   22875.5      0.30      24.1      25.7 d/*cell*20848/U189/S     
+    0:00:17   22817.5      0.30      23.1      25.7 d/*cell*20848/U330/ZN    
+    0:00:17   22784.5      0.29      22.8      25.7 d/*cell*20848/U219/CO    
+    0:00:17   22761.4      0.29      22.7      25.7 d/*cell*20848/U213/S     
+    0:00:17   22749.6      0.29      22.6      25.7 d/*cell*20848/U415/Z     
+    0:00:17   22735.6      0.29      22.7      25.7 d/*cell*20848/*cell*20981/ZN
+    0:00:17   22727.8      0.29      22.7      25.7 d/*cell*20848/*cell*20945/ZN
+    0:00:18   22719.1      0.29      22.5      25.7 d/*cell*20848/*cell*20957/ZN
+    0:00:18   22714.8      0.29      22.5      25.7 d/*cell*20848/*cell*21327/Z
+    0:00:18   22709.0      0.29      22.5      25.7 d/*cell*20848/*cell*20977/ZN
+    0:00:18   22697.0      0.29      22.5      25.7 d/*cell*20848/U179/CO    
+    0:00:18   22668.5      0.29      22.5      25.7 d/*cell*20848/*cell*21355/ZN
+    0:00:18   22932.9      0.55      28.0      12.9 d/*cell*21367/U74/ZN     
+    0:00:18   22828.1      0.41      24.8      12.9 d/*cell*21367/*cell*21492/ZN
+    0:00:18   22722.5      0.34      23.4      12.9 d/*cell*21367/*cell*21465/ZN
+    0:00:18   22657.6      0.29      24.0      12.9 d/*cell*21367/U213/S     
+    0:00:18   22579.4      0.29      22.7      12.9 d/*cell*21367/*cell*21484/ZN
+    0:00:18   22552.3      0.29      22.3      12.9 d/*cell*21367/U239/CO    
+    0:00:19   22533.7      0.29      22.4      12.9 d/*cell*21367/*cell*21600/Z
+    0:00:19   22514.8      0.28      22.2      12.9 d/*cell*21367/*cell*21425/ZN
+    0:00:19   22501.7      0.28      21.9      12.9 d/*cell*21367/*cell*21640/ZN
+    0:00:19   22488.7      0.28      22.0      12.9 d/*cell*21367/*cell*21495/Z
+    0:00:19   22470.9      0.28      21.9      12.9 d/*cell*21367/*cell*21388/ZN
+    0:00:19   22462.1      0.28      21.9      12.9 d/*cell*21367/*cell*21685/ZN
+    0:00:19   22458.4      0.28      21.9      12.9 d/*cell*21367/*cell*21524/ZN
+    0:00:19   22455.2      0.28      21.9      12.9 d/*cell*21367/*cell*21843/ZN
+    0:00:19   22438.7      0.28      21.9      12.9 d/*cell*21367/*cell*21899/ZN
+    0:00:19   22419.5      0.28      21.9      12.9 d/*cell*21367/*cell*21919/ZN
+    0:00:19   22630.7      0.55      27.0       0.0 d/*cell*21922/U452/Z     
+    0:00:20   22512.6      0.34      23.4       0.0 d/*cell*21922/U227/S     
+    0:00:20   22450.9      0.28      22.8       0.0 d/*cell*21922/U489/Z     
+    0:00:20   22369.5      0.28      21.8       0.0 d/*cell*21922/U238/S     
+    0:00:20   22305.2      0.28      20.9       0.0 d/*cell*21922/U252/S     
+    0:00:20   22266.3      0.28      20.3       0.0 d/*cell*21922/*cell*22262/ZN
+    0:00:20   22246.9      0.28      20.3       0.0 d/*cell*21922/*cell*22086/ZN
+    0:00:20   22225.9      0.28      20.3       0.0 d/*cell*21922/*cell*22359/Z
+    0:00:20   22210.5      0.28      20.3       0.0 d/*cell*21922/*cell*22356/ZN
+    0:00:20   22193.7      0.28      20.3       0.0 d/*cell*21922/*cell*22318/ZN
+    0:00:20   22187.3      0.28      20.3       0.0 d/*cell*21922/U242/S     
+    0:00:20   22180.7      0.28      20.2       0.0 d/*cell*21922/*cell*22256/ZN
+    0:00:20   22173.0      0.28      20.2       0.0 d/*cell*21922/*cell*22276/ZN
+    0:00:21   22157.5      0.28      20.2       0.0 d/*cell*21922/*cell*22461/ZN
+    0:00:21   22135.5      0.28      20.2       0.0 d/*cell*21922/*cell*22041/ZN
+    0:00:21   22128.5      0.32      20.7       0.0 d/*cell*22484/*cell*22542/ZN
+    0:00:21   22059.4      0.28      20.2       0.0 d/*cell*22484/*cell*22582/ZN
+    0:00:21   21941.0      0.28      18.7       0.0 d/*cell*22484/*cell*22635/ZN
+    0:00:21   21905.6      0.28      18.5       0.0 d/*cell*22484/*cell*22601/ZN
+    0:00:21   21883.6      0.28      18.5       0.0 d/*cell*22484/U70/ZN     
+    0:00:21   21872.1      0.28      18.5       0.0 d/*cell*22484/*cell*22621/ZN
+    0:00:21   21822.1      0.32      19.1       0.0 d/*cell*22716/U108/ZN    
+    0:00:21   21727.9      0.23      17.9       0.0 d/*cell*22716/U87/ZN     
+    0:00:21   21653.2      0.23      17.1       0.0 d/*cell*22716/*cell*22801/ZN
+    0:00:21   21621.8      0.23      16.8       0.0 d/*cell*22716/*cell*22874/ZN
+    0:00:21   21603.5      0.23      16.8       0.0 d/*cell*22716/*cell*22885/ZN
+    0:00:21   21704.8      0.73      21.3       0.0 d/*cell*22920/U27/ZN     
+    0:00:22   21512.5      0.27      17.2       0.0 d/*cell*22920/*cell*23020/ZN
+    0:00:22   21427.9      0.23      15.9       0.0 d/*cell*22920/*cell*23058/ZN
+    0:00:22   21388.5      0.23      15.5       0.0 d/*cell*22920/*cell*23031/ZN
+    0:00:22   21371.2      0.23      15.5       0.0 d/*cell*22920/*cell*23082/ZN
+    0:00:22   21356.3      0.23      15.5       0.0 d/*cell*22920/*cell*23074/ZN
+    0:00:22   21394.4      0.44      17.9       0.0 d/*cell*23143/*cell*23157/ZN
+    0:00:22   21277.9      0.24      15.7       0.0 d/*cell*23143/*cell*23248/ZN
+    0:00:22   21177.9      0.23      14.5       0.0 d/*cell*23143/*cell*23206/ZN
+    0:00:22   21131.8      0.23      14.3       0.0 d/*cell*23143/*cell*23263/ZN
+    0:00:22   21115.1      0.23      14.3       0.0 d/*cell*23143/*cell*23245/ZN
+    0:00:22   21106.3      0.23      14.3       0.0 d/*cell*23143/U207/ZN    
+    0:00:22   21076.2      0.23      14.8       0.0 d/*cell*23367/U52/ZN     
+    0:00:22   20962.7      0.23      13.6       0.0 d/*cell*23367/U166/ZN    
+    0:00:22   20896.4      0.23      12.9       0.0 d/*cell*23367/*cell*23513/ZN
+    0:00:22   20865.0      0.23      12.9       0.0 d/*cell*23367/*cell*23437/ZN
+    0:00:22   20848.3      0.23      12.9       0.0 d/*cell*23367/*cell*23562/ZN
+    0:00:23   20841.6      0.23      12.9       0.0 d/*cell*23367/*cell*23418/ZN
+    0:00:23   20742.4      0.24      12.7       0.0 d/*cell*23573/*cell*23641/ZN
+    0:00:23   20661.3      0.23      11.6       0.0 d/*cell*23573/*cell*23668/ZN
+    0:00:23   20628.8      0.23      11.4       0.0 d/*cell*23573/*cell*23722/ZN
+    0:00:23   20602.0      0.23      11.4       0.0 d/*cell*23573/U157/ZN    
+    0:00:23   20588.1      0.23      11.4       0.0 d/*cell*23573/*cell*23618/ZN
+    0:00:23   20536.8      0.24      11.7       0.0 d/*cell*23771/U30/ZN     
+    0:00:23   20405.7      0.18      10.5       0.0 d/*cell*23771/U171/ZN    
+    0:00:23   20349.0      0.18       9.8       0.0 d/*cell*23771/*cell*23833/ZN
+    0:00:23   20335.7      0.18       9.9       0.0 d/*cell*23771/*cell*23956/ZN
+    0:00:23   20324.8      0.18       9.9       0.0 d/*cell*23771/*cell*23844/ZN
+    0:00:23   20367.4      0.40      11.9       0.0 d/*cell*23994/U180/ZN    
+    0:00:23   20254.0      0.20       9.9       0.0 d/*cell*23994/*cell*24066/ZN
+    0:00:23   20150.0      0.18       8.9       0.0 d/*cell*23994/U136/ZN    
+    0:00:24   20103.2      0.18       8.8       0.0 d/*cell*23994/U137/ZN    
+    0:00:24   20087.5      0.18       8.8       0.0 d/*cell*23994/*cell*24198/ZN
+    0:00:24   20072.9      0.18       8.8       0.0 d/*cell*23994/U199/ZN    
+    0:00:24   20067.3      0.18       8.8       0.0                          
+    0:00:24   20062.0      0.18       8.8       0.0                          
+    0:00:24   20062.0      0.18       8.8       0.0                          
+    0:00:24   20061.7      0.18       8.9       0.0                          
+    0:00:24   20061.7      0.18       8.9       0.0                          
+    0:00:26   18003.7      0.18       9.2       0.0                          
+    0:00:26   18006.9      0.17       8.7       0.0                          
+    0:00:27   18012.2      0.16       7.9       0.0                          
+    0:00:27   18015.1      0.15       7.5       0.0                          
+    0:00:27   18021.5      0.14       7.1       0.0                          
+    0:00:27   18025.5      0.14       6.6       0.0                          
+    0:00:27   18027.6      0.14       6.6       0.0                          
+    0:00:27   18031.1      0.14       6.6       0.0                          
+    0:00:27   18030.0      0.12       6.4       0.0                          
+    0:00:27   18036.1      0.12       6.2       0.0                          
+    0:00:27   18042.5      0.12       6.0       0.0                          
+    0:00:27   18045.2      0.12       6.0       0.0                          
+    0:00:27   18048.1      0.12       6.0       0.0                          
+    0:00:28   18048.1      0.12       6.0       0.0                          
+    0:00:28   18048.1      0.12       6.0       0.0                          
+    0:00:28   18048.1      0.12       6.0       0.0                          
+    0:00:28   18048.1      0.12       6.0       0.0                          
+    0:00:28   18048.1      0.12       6.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:28   18048.1      0.12       6.0       0.0                          
+    0:00:28   18053.2      0.11       5.2       0.0 d/f5_reg[23]/D           
+    0:00:28   18064.9      0.10       5.1       0.0 d/f3_reg[23]/D           
+    0:00:28   18071.0      0.10       4.8       0.0 d/f4_reg[21]/D           
+    0:00:28   18077.6      0.09       4.7       0.0 d/f2_reg[23]/D           
+    0:00:28   18084.8      0.09       4.4       0.0 d/f4_reg[21]/D           
+    0:00:28   18087.5      0.08       4.2       0.0 d/f4_reg[23]/D           
+    0:00:28   18094.4      0.08       4.0       0.0 d/f7_reg[20]/D           
+    0:00:28   18097.8      0.08       3.9       0.0 d/f8_reg[23]/D           
+    0:00:28   18101.8      0.08       3.6       0.0 d/f4_reg[23]/D           
+    0:00:28   18105.0      0.07       3.5       0.0 d/f7_reg[20]/D           
+    0:00:28   18105.8      0.07       3.4       0.0 d/f5_reg[21]/D           
+    0:00:28   18109.5      0.07       3.4       0.0 d/f5_reg[21]/D           
+    0:00:29   18115.9      0.06       3.2       0.0 d/f1_reg[19]/D           
+    0:00:29   18119.7      0.06       3.2       0.0 d/f2_reg[23]/D           
+    0:00:29   18124.7      0.06       3.1       0.0 d/f8_reg[20]/D           
+    0:00:29   18131.1      0.06       3.0       0.0 d/f5_reg[21]/D           
+    0:00:29   18133.2      0.06       2.9       0.0 d/f1_reg[23]/D           
+    0:00:29   18136.7      0.06       2.8       0.0 d/f4_reg[21]/D           
+    0:00:29   18142.0      0.06       2.7       0.0 d/f3_reg[23]/D           
+    0:00:29   18146.0      0.06       2.7       0.0 d/f3_reg[23]/D           
+    0:00:29   18150.0      0.06       2.6       0.0 d/f2_reg[23]/D           
+    0:00:29   18149.7      0.06       2.6       0.0 d/f3_reg[23]/D           
+    0:00:29   18155.3      0.05       2.6       0.0 d/f8_reg[20]/D           
+    0:00:29   18158.2      0.05       2.5       0.0 d/f2_reg[21]/D           
+    0:00:29   18161.4      0.05       2.5       0.0 d/f6_reg[18]/D           
+    0:00:29   18164.1      0.05       2.4       0.0 d/f5_reg[21]/D           
+    0:00:30   18174.2      0.05       2.3       0.0 d/f8_reg[23]/D           
+    0:00:30   18178.2      0.05       2.2       0.0 d/f4_reg[23]/D           
+    0:00:30   18185.4      0.05       2.2       0.0 d/f8_reg[22]/D           
+    0:00:30   18187.7      0.05       2.2       0.0 d/f5_reg[21]/D           
+    0:00:30   18191.7      0.05       2.2       0.0 d/f4_reg[23]/D           
+    0:00:30   18196.5      0.05       2.1       0.0 d/f7_reg[23]/D           
+    0:00:30   18198.4      0.05       2.1       0.0 d/f1_reg[19]/D           
+    0:00:30   18200.3      0.05       2.1       0.0 d/f8_reg[22]/D           
+    0:00:30   18204.2      0.04       2.1       0.0 d/f3_reg[23]/D           
+    0:00:30   18207.4      0.04       2.0       0.0 d/f6_reg[18]/D           
+    0:00:30   18209.3      0.04       2.0       0.0 d/f4_reg[19]/D           
+    0:00:30   18209.8      0.04       2.0       0.0 d/f3_reg[23]/D           
+    0:00:30   18213.3      0.04       1.9       0.0 d/f2_reg[21]/D           
+    0:00:30   18216.7      0.04       2.0       0.0 d/f5_reg[21]/D           
+    0:00:30   18219.7      0.04       1.9       0.0 d/f6_reg[20]/D           
+    0:00:31   18225.5      0.04       1.9       0.0 d/f3_reg[23]/D           
+    0:00:31   18226.6      0.04       1.9       0.0 d/f7_reg[22]/D           
+    0:00:31   18230.0      0.04       1.8       0.0 d/f6_reg[20]/D           
+    0:00:31   18234.6      0.04       1.7       0.0 d/f8_reg[20]/D           
+    0:00:31   18239.6      0.04       1.6       0.0 d/f1_reg[23]/D           
+    0:00:31   18241.7      0.04       1.6       0.0 d/f4_reg[23]/D           
+    0:00:31   18243.3      0.04       1.5       0.0 d/f4_reg[23]/D           
+    0:00:31   18245.5      0.04       1.5       0.0 d/f3_reg[23]/D           
+    0:00:31   18245.5      0.03       1.5       0.0 d/f3_reg[23]/D           
+    0:00:31   18243.9      0.03       1.5       0.0 d/f3_reg[23]/D           
+    0:00:31   18249.2      0.03       1.5       0.0 d/f6_reg[20]/D           
+    0:00:31   18250.3      0.03       1.5       0.0 d/f7_reg[22]/D           
+    0:00:32   18252.9      0.03       1.4       0.0 d/f7_reg[22]/D           
+    0:00:32   18250.3      0.03       1.4       0.0 d/f3_reg[23]/D           
+    0:00:32   18254.8      0.03       1.4       0.0 d/f3_reg[23]/D           
+    0:00:32   18256.1      0.03       1.3       0.0 d/f7_reg[23]/D           
+    0:00:32   18259.0      0.03       1.3       0.0 d/f3_reg[23]/D           
+    0:00:32   18259.0      0.03       1.3       0.0 d/f3_reg[23]/D           
+    0:00:32   18261.2      0.03       1.3       0.0 d/f2_reg[21]/D           
+    0:00:32   18262.0      0.03       1.3       0.0 d/f5_reg[21]/D           
+    0:00:33   18263.3      0.03       1.3       0.0 d/f3_reg[23]/D           
+    0:00:33   18257.7      0.03       1.1       0.0 d/f2_reg[23]/D           
+    0:00:33   18260.1      0.03       1.1       0.0 d/f2_reg[23]/D           
+    0:00:33   18265.7      0.03       1.1       0.0 d/f6_reg[20]/D           
+    0:00:33   18268.6      0.03       1.1       0.0 d/f1_reg[20]/D           
+    0:00:33   18270.2      0.03       1.1       0.0 d/f3_reg[23]/D           
+    0:00:33   18272.6      0.03       1.1       0.0 d/f3_reg[23]/D           
+    0:00:34   18274.5      0.03       1.0       0.0 d/f8_reg[23]/D           
+    0:00:34   18276.3      0.02       1.0       0.0 d/f7_reg[22]/D           
+    0:00:34   18282.4      0.02       0.9       0.0 d/f5_reg[21]/D           
+    0:00:34   18282.4      0.02       0.9       0.0 d/f3_reg[23]/D           
+    0:00:34   18287.5      0.02       0.9       0.0 d/f3_reg[23]/D           
+    0:00:34   18291.5      0.02       0.9       0.0 d/f3_reg[23]/D           
+    0:00:34   18294.1      0.02       0.9       0.0 d/f3_reg[23]/D           
+    0:00:34   18297.1      0.02       0.9       0.0 d/f3_reg[23]/D           
+    0:00:34   18301.1      0.02       0.8       0.0 d/f2_reg[21]/D           
+    0:00:34   18302.9      0.02       0.8       0.0 d/f4_reg[23]/D           
+    0:00:34   18308.2      0.02       0.7       0.0 d/f3_reg[23]/D           
+    0:00:34   18309.6      0.02       0.7       0.0 d/f3_reg[23]/D           
+    0:00:34   18311.4      0.02       0.6       0.0 d/f8_reg[20]/D           
+    0:00:35   18313.6      0.02       0.6       0.0 d/f4_reg[23]/D           
+    0:00:35   18317.3      0.02       0.6       0.0 d/f5_reg[21]/D           
+    0:00:35   18317.8      0.02       0.6       0.0 d/f3_reg[23]/D           
+    0:00:35   18318.9      0.02       0.6       0.0 d/f4_reg[23]/D           
+    0:00:35   18318.9      0.02       0.6       0.0 d/f3_reg[23]/D           
+    0:00:35   18313.6      0.01       0.5       0.0 d/f6_reg[20]/D           
+    0:00:36   18315.2      0.01       0.5       0.0 d/f4_reg[23]/D           
+    0:00:36   18317.6      0.01       0.5       0.0 d/f3_reg[23]/D           
+    0:00:36   18320.2      0.01       0.4       0.0 d/f2_reg[23]/D           
+    0:00:36   18321.0      0.01       0.4       0.0 d/f4_reg[23]/D           
+    0:00:36   18322.6      0.01       0.4       0.0 d/f1_reg[20]/D           
+    0:00:36   18321.0      0.01       0.4       0.0 d/f3_reg[23]/D           
+    0:00:36   18322.9      0.01       0.4       0.0 d/f1_reg[23]/D           
+    0:00:36   18322.6      0.01       0.3       0.0 d/f1_reg[17]/D           
+    0:00:36   18324.5      0.01       0.3       0.0 d/f6_reg[20]/D           
+    0:00:36   18325.3      0.01       0.3       0.0 d/f7_reg[23]/D           
+    0:00:36   18325.3      0.01       0.3       0.0 d/f5_reg[23]/D           
+    0:00:36   18326.9      0.01       0.3       0.0 d/f6_reg[23]/D           
+    0:00:36   18329.0      0.01       0.2       0.0 d/f3_reg[23]/D           
+    0:00:36   18329.0      0.01       0.2       0.0 d/f7_reg[23]/D           
+    0:00:37   18329.3      0.01       0.2       0.0 d/f3_reg[23]/D           
+    0:00:37   18330.6      0.01       0.2       0.0 d/f3_reg[23]/D           
+    0:00:37   18332.7      0.01       0.2       0.0 d/f3_reg[23]/D           
+    0:00:37   18332.7      0.01       0.2       0.0 d/f3_reg[23]/D           
+    0:00:38   18332.7      0.01       0.2       0.0                          
+    0:00:38   18283.5      0.01       0.2       0.0                          
+    0:00:39   18273.7      0.01       0.2       0.0                          
+    0:00:39   18273.7      0.01       0.2       0.0 d/f3_reg[23]/D           
+    0:00:39   18275.3      0.01       0.2       0.0 d/f3_reg[23]/D           
+    0:00:39   18275.5      0.01       0.2       0.0 d/f2_reg[21]/D           
+    0:00:39   18276.3      0.01       0.2       0.0 d/f5_reg[21]/D           
+    0:00:39   18276.3      0.01       0.2       0.0                          
+    0:00:40   18279.8      0.01       0.1       0.0                          
+    0:00:40   18280.1      0.01       0.1       0.0                          
+    0:00:40   18282.2      0.01       0.1       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:40   18282.2      0.01       0.1       0.0                          
+    0:00:40   18282.2      0.01       0.1       0.0                          
+    0:00:40   18208.8      0.01       0.1       0.0                          
+    0:00:40   18195.5      0.01       0.1       0.0                          
+    0:00:40   18194.4      0.01       0.1       0.0                          
+    0:00:40   18193.3      0.01       0.1       0.0                          
+    0:00:40   18192.8      0.01       0.1       0.0                          
+    0:00:40   18192.8      0.01       0.1       0.0                          
+    0:00:41   18192.8      0.01       0.1       0.0                          
+    0:00:41   18192.8      0.01       0.1       0.0                          
+    0:00:41   18168.1      0.02       0.3       0.0                          
+    0:00:41   18168.1      0.02       0.3       0.0                          
+    0:00:41   18168.1      0.02       0.3       0.0                          
+    0:00:41   18168.1      0.02       0.3       0.0                          
+    0:00:41   18168.1      0.02       0.3       0.0                          
+    0:00:41   18168.1      0.02       0.3       0.0                          
+    0:00:41   18170.5      0.01       0.1       0.0                          
+    0:00:41   18176.6      0.01       0.1       0.0                          
+    0:00:41   18176.0      0.01       0.1       0.0                          
+    0:00:42   18173.7      0.01       0.1       0.0                          
+    0:00:42   18171.8      0.01       0.1       0.0                          
+    0:00:42   18167.0      0.01       0.1       0.0                          
+    0:00:42   18125.5      0.01       0.1       0.0                          
+    0:00:42   18088.0      0.01       0.1       0.0                          
+    0:00:42   18035.1      0.01       0.1       0.0                          
+    0:00:42   17991.7      0.01       0.1       0.0                          
+    0:00:43   17955.8      0.01       0.1       0.0                          
+    0:00:43   17952.1      0.01       0.1       0.0                          
+    0:00:43   17952.1      0.01       0.1       0.0                          
+    0:00:43   17952.1      0.01       0.1       0.0                          
+    0:00:43   17952.1      0.01       0.1       0.0                          
+    0:00:43   17952.1      0.01       0.1       0.0                          
+    0:00:43   17952.1      0.01       0.1       0.0                          
+    0:00:43   17952.9      0.01       0.1       0.0                          
+    0:00:44   17952.3      0.01       0.1       0.0                          
+    0:00:44   17955.0      0.01       0.1       0.0                          
+    0:00:44   17955.5      0.01       0.1       0.0                          
+    0:00:44   17956.3      0.01       0.1       0.0                          
+    0:00:44   17956.3      0.01       0.1       0.0                          
+    0:00:44   17959.8      0.01       0.1       0.0                          
+    0:00:44   17959.8      0.00       0.1       0.0 d/f7_reg[22]/D           
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'mvm_8_8_12_1' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'd/mem_a1/clk': 1443 load(s), 1 driver(s)
+1
+report_area
+ 
+****************************************
+Report : area
+Design : mvm_8_8_12_1
+Version: J-2014.09-SP5-2
+Date   : Thu Dec  3 16:27:17 2015
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'mvm_8_8_12_1' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           42
+Number of nets:                            85
+Number of cells:                            2
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       2
+
+Combinational area:              11318.033970
+Buf/Inv area:                      961.324003
+Noncombinational area:            6641.753778
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 17959.787748
+Total area:                 undefined
+1
+report_power
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : mvm_8_8_12_1
+Version: J-2014.09-SP5-2
+Date   : Thu Dec  3 16:27:18 2015
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mvm_8_8_12_1           5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   6.1331 mW   (86%)
+  Net Switching Power  = 961.3395 uW   (14%)
+                         ---------
+Total Dynamic Power    =   7.0944 mW  (100%)
+
+Cell Leakage Power     = 390.3811 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       5.5169e+03          177.3595        1.1364e+05        5.8079e+03  (  77.60%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    616.1794          783.9783        2.7674e+05        1.6769e+03  (  22.40%)
+--------------------------------------------------------------------------------------------------
+Total          6.1331e+03 uW       961.3378 uW     3.9038e+05 nW     7.4848e+03 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mvm_8_8_12_1
+Version: J-2014.09-SP5-2
+Date   : Thu Dec  3 16:27:18 2015
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: d/mem_x/data_out_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: d/f3_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mvm_8_8_12_1       5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  d/mem_x/data_out_reg[8]/CK (SDFF_X1)                    0.00 #     0.00 r
+  d/mem_x/data_out_reg[8]/Q (SDFF_X1)                     0.09       0.09 r
+  d/mem_x/data_out[8] (memory_WIDTH12_SIZE8_LOGSIZE3_0)
+                                                          0.00       0.09 r
+  d/mult_88/b[8] (datapath_DW_mult_tc_21)                 0.00       0.09 r
+  d/mult_88/U496/Z (BUF_X2)                               0.07       0.16 r
+  d/mult_88/U765/ZN (XNOR2_X1)                            0.08       0.23 r
+  d/mult_88/U704/ZN (OAI22_X1)                            0.05       0.28 f
+  d/mult_88/U760/ZN (XNOR2_X1)                            0.06       0.34 f
+  d/mult_88/U204/CO (FA_X1)                               0.09       0.43 f
+  d/mult_88/U198/S (FA_X1)                                0.13       0.57 r
+  d/mult_88/U197/S (FA_X1)                                0.12       0.69 f
+  d/mult_88/U543/ZN (NOR2_X1)                             0.04       0.73 r
+  d/mult_88/U769/ZN (OAI21_X1)                            0.03       0.76 f
+  d/mult_88/U720/ZN (AOI21_X1)                            0.04       0.80 r
+  d/mult_88/U865/ZN (OAI21_X1)                            0.04       0.84 f
+  d/mult_88/U889/ZN (INV_X1)                              0.04       0.88 r
+  d/mult_88/U894/ZN (OAI21_X1)                            0.04       0.92 f
+  d/mult_88/U893/ZN (XNOR2_X1)                            0.06       0.98 f
+  d/mult_88/product[18] (datapath_DW_mult_tc_21)          0.00       0.98 f
+  d/add_89/B[18] (datapath_DW01_add_21)                   0.00       0.98 f
+  d/add_89/U301/ZN (NOR2_X1)                              0.04       1.02 r
+  d/add_89/U300/ZN (OAI21_X1)                             0.03       1.05 f
+  d/add_89/U298/ZN (AOI21_X1)                             0.05       1.10 r
+  d/add_89/U302/ZN (OAI21_X1)                             0.04       1.14 f
+  d/add_89/U345/ZN (AOI21_X1)                             0.06       1.20 r
+  d/add_89/U351/ZN (OAI21_X1)                             0.04       1.24 f
+  d/add_89/U350/ZN (XNOR2_X1)                             0.06       1.29 f
+  d/add_89/SUM[23] (datapath_DW01_add_21)                 0.00       1.29 f
+  d/U10/ZN (AOI22_X1)                                     0.05       1.34 r
+  d/U11/ZN (INV_X1)                                       0.02       1.37 f
+  d/f3_reg[23]/D (DFF_X1)                                 0.01       1.37 f
+  data arrival time                                                  1.37
+
+  clock clk (rise edge)                                   1.41       1.41
+  clock network delay (ideal)                             0.00       1.41
+  d/f3_reg[23]/CK (DFF_X1)                                0.00       1.41 r
+  library setup time                                     -0.04       1.37
+  data required time                                                 1.37
+  --------------------------------------------------------------------------
+  data required time                                                 1.37
+  data arrival time                                                 -1.37
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/sthakkar/ese507work/proj3/k8p8b12g1/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...
