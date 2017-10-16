@@ -1,0 +1,1029 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.6;
+1.6
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "mvm_16_16_8_1";
+mvm_16_16_8_1
+set SRC_FILE "s_thakkar_mvm_16_16_8_1.sv";
+s_thakkar_mvm_16_16_8_1.sv
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./s_thakkar_mvm_16_16_8_1.sv
+Compiling source file ./s_thakkar_mvm_16_16_8_1.sv
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'mvm_16_16_8_1'.
+Information: Building the design 'datapath'. (HDL-193)
+
+Inferred memory devices in process
+	in routine datapath line 72 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        f_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f1_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f2_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f3_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f4_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f5_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f6_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f7_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f7_reg        | Flip-flop |  13   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f8_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f9_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f10_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f11_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f12_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f13_reg       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f13_reg       | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f14_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f15_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       f16_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ctrlpath'. (HDL-193)
+
+Inferred memory devices in process
+	in routine ctrlpath line 141 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 149 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      done_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 156 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a1_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 165 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a2_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 174 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a3_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 183 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a4_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 192 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a5_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 201 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a6_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 210 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a7_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 219 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a8_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 228 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_a9_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 237 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    addr_a10_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 246 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    addr_a11_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 255 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    addr_a12_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 264 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    addr_a13_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 273 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    addr_a14_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 282 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    addr_a15_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 291 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    addr_a16_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 300 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_x_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 307 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     addr_y_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 316 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    clear_acc_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 323 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       clc_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ctrlpath line 330 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      clc1_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath' with
+	the parameters "8,16,4". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH8_SIZE16_LOGSIZE4 line 28 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================================
+|         block name/line          | Inputs | Outputs | # sel inputs | MB |
+===========================================================================
+| memory_WIDTH8_SIZE16_LOGSIZE4/29 |   16   |    8    |      4       | N  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'datapath' with
+	the parameters "16,16,4". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE16_LOGSIZE4 line 28 in file
+		'./s_thakkar_mvm_16_16_8_1.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+============================================================================
+|         block name/line           | Inputs | Outputs | # sel inputs | MB |
+============================================================================
+| memory_WIDTH16_SIZE16_LOGSIZE4/29 |   16   |   16    |      4       | N  |
+============================================================================
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset loadMatrix loadVector start data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{loadMatrix loadVector start data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+#set_input_delay 1 -max -clock clk $INPUTS
+#set_output_delay 1 -max -clock clk [all_outputs]
+# rule of thumb: 20% of clock period
+###### OPTIMIZATION #######
+set_max_area 0 
+1
+###### RUN #####
+compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2 |   *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2 |   *     |
+============================================================================
+
+
+Information: There are 38 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'ctrlpath'
+Information: Added key list 'DesignWare' to design 'ctrlpath'. (DDB-72)
+  Processing 'memory_WIDTH16_SIZE16_LOGSIZE4'
+  Processing 'memory_WIDTH8_SIZE16_LOGSIZE4_0'
+  Processing 'datapath'
+  Processing 'mvm_16_16_8_1'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'datapath_DW01_add_0'
+  Mapping 'datapath_DW_mult_tc_0'
+  Processing 'datapath_DW01_add_1'
+  Mapping 'datapath_DW_mult_tc_1'
+  Processing 'datapath_DW01_add_2'
+  Mapping 'datapath_DW_mult_tc_2'
+  Processing 'datapath_DW01_add_3'
+  Mapping 'datapath_DW_mult_tc_3'
+  Processing 'datapath_DW01_add_4'
+  Mapping 'datapath_DW_mult_tc_4'
+  Processing 'datapath_DW01_add_5'
+  Mapping 'datapath_DW_mult_tc_5'
+  Processing 'datapath_DW01_add_6'
+  Mapping 'datapath_DW_mult_tc_6'
+  Processing 'datapath_DW01_add_7'
+  Mapping 'datapath_DW_mult_tc_7'
+  Processing 'datapath_DW01_add_8'
+  Mapping 'datapath_DW_mult_tc_8'
+  Processing 'datapath_DW01_add_9'
+  Mapping 'datapath_DW_mult_tc_9'
+  Processing 'datapath_DW01_add_10'
+  Mapping 'datapath_DW_mult_tc_10'
+  Processing 'datapath_DW01_add_11'
+  Mapping 'datapath_DW_mult_tc_11'
+  Processing 'datapath_DW01_add_12'
+  Mapping 'datapath_DW_mult_tc_12'
+  Processing 'datapath_DW01_add_13'
+  Mapping 'datapath_DW_mult_tc_13'
+  Processing 'datapath_DW01_add_14'
+  Mapping 'datapath_DW_mult_tc_14'
+  Processing 'datapath_DW01_add_15'
+  Mapping 'datapath_DW_mult_tc_15'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06   33467.3      3.09     790.5    3000.9                          
+    0:00:06   33467.3      3.09     790.5    3000.9                          
+    0:00:10   34107.8      0.33      13.1      11.0                          
+    0:00:10   34104.7      0.33      13.2      11.0                          
+    0:00:10   34104.7      0.33      13.2      11.0                          
+    0:00:10   34104.7      0.33      13.2      11.0                          
+    0:00:10   34104.7      0.33      13.2      11.0                          
+    0:00:12   29257.9      0.39      13.8       0.0                          
+    0:00:13   29256.3      0.35      12.5       0.0                          
+    0:00:13   29265.9      0.33      12.2       0.0                          
+    0:00:14   29274.9      0.33      12.1       0.0                          
+    0:00:14   29276.8      0.33      12.1       0.0                          
+    0:00:14   29279.9      0.33      12.0       0.0                          
+    0:00:14   29283.1      0.32      11.9       0.0                          
+    0:00:14   29290.6      0.32      11.9       0.0                          
+    0:00:14   29297.8      0.32      11.8       0.0                          
+    0:00:15   29296.2      0.32      11.6       0.0                          
+    0:00:15   29308.1      0.31      11.5       0.0                          
+    0:00:15   29326.8      0.31      11.3       0.0                          
+    0:00:15   29341.1      0.31      10.9       0.0                          
+    0:00:15   29351.5      0.26      11.1       0.0                          
+    0:00:15   29358.4      0.26      11.1       0.0                          
+    0:00:15   29358.4      0.26      11.1       0.0                          
+    0:00:15   29358.4      0.26      11.1       0.0                          
+    0:00:15   29358.4      0.26      11.1       0.0                          
+    0:00:15   29358.4      0.26      11.1       0.0                          
+    0:00:15   29358.4      0.26      11.1       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:15   29358.4      0.26      11.1       0.0                          
+    0:00:15   29359.0      0.25      10.9       0.0 d/f12_reg[15]/D          
+    0:00:15   29380.5      0.24      10.4       0.0 d/f7_reg[15]/D           
+    0:00:15   29390.1      0.23      10.2       0.0 d/f2_reg[15]/D           
+    0:00:16   29405.8      0.23      10.2       0.0 d/f5_reg[15]/D           
+    0:00:16   29428.4      0.23      10.1       0.0 d/f3_reg[15]/D           
+    0:00:16   29434.0      0.23      10.0       0.0 d/f12_reg[15]/D          
+    0:00:16   29442.2      0.23       9.9       0.0 d/f14_reg[15]/D          
+    0:00:16   29457.6      0.22       9.8       0.0 d/f7_reg[15]/D           
+    0:00:16   29478.9      0.22       9.5       0.0 d/f7_reg[15]/D           
+    0:00:16   29505.3      0.22       9.3       0.0 d/f6_reg[15]/D           
+    0:00:16   29528.1      0.22       9.1       0.0 d/f2_reg[15]/D           
+    0:00:16   29538.2      0.21       9.1       0.0 d/f16_reg[15]/D          
+    0:00:16   29561.4      0.21       8.9       0.0 d/f14_reg[15]/D          
+    0:00:16   29585.6      0.21       8.7       0.0 d/f15_reg[15]/D          
+    0:00:16   29610.9      0.21       8.6       0.0 d/f11_reg[15]/D          
+    0:00:16   29630.5      0.21       8.4       0.0 d/f12_reg[15]/D          
+    0:00:16   29650.8      0.21       8.2       0.0 d/f8_reg[15]/D           
+    0:00:16   29658.5      0.20       8.2       0.0 d/f13_reg[15]/D          
+    0:00:16   29668.0      0.20       8.1       0.0 d/f16_reg[15]/D          
+    0:00:17   29675.5      0.20       8.1       0.0 d/f6_reg[15]/D           
+    0:00:17   29686.9      0.20       8.0       0.0 d/f7_reg[15]/D           
+    0:00:17   29702.4      0.20       7.8       0.0 d/f14_reg[15]/D          
+    0:00:17   29714.1      0.20       7.8       0.0 d/f13_reg[15]/D          
+    0:00:17   29725.8      0.19       7.7       0.0 d/f15_reg[15]/D          
+    0:00:17   29745.7      0.19       7.6       0.0 d/f11_reg[15]/D          
+    0:00:17   29761.1      0.19       7.5       0.0 d/f8_reg[15]/D           
+    0:00:17   29773.4      0.18       7.4       0.0 d/f5_reg[15]/D           
+    0:00:17   29791.7      0.18       7.3       0.0 d/f6_reg[15]/D           
+    0:00:17   29818.9      0.18       7.2      24.2 d/f11_reg[15]/D          
+    0:00:17   29828.4      0.18       7.2      24.2 d/f16_reg[15]/D          
+    0:00:17   29849.2      0.18       7.0      24.2 d/f6_reg[15]/D           
+    0:00:17   29864.9      0.17       6.8      24.2 d/f7_reg[15]/D           
+    0:00:17   29879.8      0.17       6.8      24.2 d/f15_reg[15]/D          
+    0:00:17   29894.7      0.17       6.7      24.2 d/f1_reg[15]/D           
+    0:00:17   29905.3      0.17       6.5      24.2 d/f15_reg[15]/D          
+    0:00:18   29920.2      0.17       6.3      24.2 d/f4_reg[15]/D           
+    0:00:18   29931.1      0.16       6.3      24.2 d/f6_reg[15]/D           
+    0:00:18   29951.6      0.16       6.2      48.4 d/f5_reg[15]/D           
+    0:00:18   29965.4      0.16       6.1      48.4 d/f10_reg[15]/D          
+    0:00:18   29976.3      0.16       6.1      48.4 d/f9_reg[15]/D           
+    0:00:18   29983.3      0.16       6.0      48.4 d/f7_reg[15]/D           
+    0:00:18   30005.9      0.16       5.9      48.4 d/f1_reg[15]/D           
+    0:00:18   30018.1      0.15       5.8      48.4 d/f9_reg[15]/D           
+    0:00:18   30025.0      0.15       5.7      48.4 d/f11_reg[15]/D          
+    0:00:18   30033.3      0.15       5.7      48.4 d/f10_reg[15]/D          
+    0:00:18   30041.0      0.15       5.7      48.4 d/f14_reg[15]/D          
+    0:00:18   30057.7      0.15       5.6      48.4 d/f4_reg[15]/D           
+    0:00:18   30067.8      0.15       5.5      48.4 d/f6_reg[15]/D           
+    0:00:18   30078.7      0.15       5.5      48.4 d/f8_reg[15]/D           
+    0:00:18   30088.3      0.14       5.5      48.4 d/f14_reg[15]/D          
+    0:00:18   30096.3      0.14       5.4      48.4 d/f12_reg[15]/D          
+    0:00:19   30106.4      0.14       5.3      48.4 d/f13_reg[15]/D          
+    0:00:19   30128.8      0.14       5.2      48.4 d/f7_reg[15]/D           
+    0:00:19   30138.6      0.14       5.2      72.7 d/f3_reg[15]/D           
+    0:00:19   30149.0      0.14       5.1      72.7 d/f8_reg[15]/D           
+    0:00:19   30159.9      0.13       5.0      72.7 d/f8_reg[15]/D           
+    0:00:19   30174.2      0.13       4.9      72.7 d/f1_reg[15]/D           
+    0:00:19   30178.8      0.13       4.9      72.7 d/f8_reg[15]/D           
+    0:00:19   30190.7      0.13       4.8      72.7 d/f13_reg[15]/D          
+    0:00:19   30203.0      0.13       4.8      96.9 d/f12_reg[15]/D          
+    0:00:19   30211.7      0.13       4.8      96.9 d/f4_reg[15]/D           
+    0:00:19   30220.5      0.13       4.7      96.9 d/f12_reg[15]/D          
+    0:00:19   30229.8      0.13       4.6      96.9 d/f5_reg[15]/D           
+    0:00:19   30241.0      0.12       4.6      96.9 d/f8_reg[15]/D           
+    0:00:19   30257.2      0.12       4.5     121.1 d/f16_reg[15]/D          
+    0:00:19   30278.5      0.12       4.4     121.1 d/f10_reg[15]/D          
+    0:00:19   30286.2      0.12       4.3     121.1 d/f1_reg[15]/D           
+    0:00:19   30301.1      0.12       4.2     121.1 d/f14_reg[15]/D          
+    0:00:19   30304.3      0.12       4.2     121.1 d/f10_reg[15]/D          
+    0:00:20   30312.0      0.12       4.2     121.1 d/f11_reg[15]/D          
+    0:00:20   30319.7      0.11       4.1     121.1 d/f4_reg[15]/D           
+    0:00:20   30327.2      0.11       4.1     121.1 d/f6_reg[15]/D           
+    0:00:20   30334.1      0.11       4.1     121.1 d/f12_reg[15]/D          
+    0:00:20   30341.6      0.11       4.0     121.1 d/f4_reg[15]/D           
+    0:00:20   30359.4      0.11       4.0     145.3 d/f2_reg[15]/D           
+    0:00:20   30369.2      0.11       3.9     145.3 d/f8_reg[15]/D           
+    0:00:20   30380.1      0.11       3.8     145.3 d/f9_reg[14]/D           
+    0:00:20   30386.2      0.11       3.8     145.3 d/f7_reg[15]/D           
+    0:00:20   30389.4      0.11       3.8     145.3 d/f9_reg[15]/D           
+    0:00:20   30396.6      0.11       3.7     145.3 d/f11_reg[15]/D          
+    0:00:20   30399.8      0.11       3.7     145.3 d/f10_reg[15]/D          
+    0:00:20   30407.5      0.11       3.6     145.3 d/f14_reg[15]/D          
+    0:00:20   30411.0      0.10       3.6     145.3 d/f16_reg[15]/D          
+    0:00:20   30424.3      0.10       3.6     169.5 d/f12_reg[15]/D          
+    0:00:20   30433.3      0.10       3.6     169.5 d/f15_reg[15]/D          
+    0:00:20   30438.9      0.10       3.5     169.5 d/f6_reg[15]/D           
+    0:00:20   30445.3      0.10       3.5     169.5 d/f10_reg[15]/D          
+    0:00:21   30458.9      0.10       3.5     193.7 d/f12_reg[15]/D          
+    0:00:21   30469.0      0.10       3.4     193.7 d/f12_reg[15]/D          
+    0:00:21   30482.0      0.10       3.4     193.7 d/f9_reg[14]/D           
+    0:00:21   30489.2      0.10       3.4     193.7 d/f14_reg[15]/D          
+    0:00:21   30493.2      0.10       3.3     193.7 d/f9_reg[15]/D           
+    0:00:21   30502.2      0.10       3.3     193.7 d/f1_reg[15]/D           
+    0:00:21   30503.3      0.10       3.2     193.7 d/f3_reg[15]/D           
+    0:00:21   30512.6      0.10       3.3     193.7 d/f5_reg[15]/D           
+    0:00:21   30538.9      0.09       3.2     218.0 d/f7_reg[15]/D           
+    0:00:21   30546.1      0.09       3.2     218.0 d/f11_reg[15]/D          
+    0:00:21   30549.8      0.09       3.2     218.0 d/f13_reg[15]/D          
+    0:00:21   30557.0      0.09       3.1     218.0 d/f7_reg[15]/D           
+    0:00:21   30570.0      0.09       3.0     218.0 d/f3_reg[15]/D           
+    0:00:21   30571.9      0.09       3.0     218.0 d/f13_reg[15]/D          
+    0:00:21   30575.4      0.09       3.0     218.0 d/f9_reg[15]/D           
+    0:00:21   30579.6      0.09       3.0     218.0 d/f5_reg[15]/D           
+    0:00:21   30594.8      0.09       3.0     218.0 d/f7_reg[15]/D           
+    0:00:21   30603.3      0.09       2.9     218.0 d/f13_reg[15]/D          
+    0:00:21   30613.9      0.09       2.9     218.0 d/f11_reg[15]/D          
+    0:00:22   30624.8      0.09       2.8     218.0 d/f6_reg[15]/D           
+    0:00:22   30633.6      0.09       2.7     218.0 d/f14_reg[15]/D          
+    0:00:22   30637.1      0.09       2.7     218.0 d/f11_reg[15]/D          
+    0:00:22   30642.9      0.09       2.7     218.0 d/f1_reg[15]/D           
+    0:00:22   30651.4      0.08       2.6     218.0 d/f16_reg[15]/D          
+    0:00:22   30654.6      0.08       2.6     218.0 d/f10_reg[15]/D          
+    0:00:22   30668.5      0.08       2.6     218.0 d/f8_reg[15]/D           
+    0:00:22   30667.7      0.08       2.6     218.0 d/f2_reg[15]/D           
+    0:00:22   30678.3      0.08       2.5     218.0 d/f14_reg[15]/D          
+    0:00:22   30685.8      0.08       2.5     218.0 d/f10_reg[15]/D          
+    0:00:22   30687.4      0.08       2.5     218.0 d/f12_reg[15]/D          
+    0:00:22   30696.9      0.08       2.5     218.0 d/f15_reg[15]/D          
+    0:00:22   30699.1      0.08       2.4     218.0 d/f7_reg[15]/D           
+    0:00:22   30701.5      0.08       2.4     218.0 d/f1_reg[15]/D           
+    0:00:22   30707.3      0.08       2.4     218.0 d/f11_reg[15]/D          
+    0:00:22   30708.6      0.08       2.4     218.0 d/f1_reg[15]/D           
+    0:00:22   30711.3      0.08       2.4     218.0 d/f2_reg[15]/D           
+    0:00:22   30714.2      0.07       2.3     218.0 d/f12_reg[15]/D          
+    0:00:22   30714.2      0.07       2.3     218.0 d/f10_reg[15]/D          
+    0:00:23   30717.4      0.07       2.3     218.0 d/f11_reg[15]/D          
+    0:00:23   30721.7      0.07       2.3     218.0 d/f4_reg[15]/D           
+    0:00:23   30721.7      0.07       2.3     218.0 d/f15_reg[15]/D          
+    0:00:23   30728.1      0.07       2.3     218.0 d/f2_reg[15]/D           
+    0:00:23   30738.4      0.07       2.2     218.0 d/f11_reg[15]/D          
+    0:00:23   30752.5      0.07       2.2     218.0 d/f12_reg[15]/D          
+    0:00:23   30757.8      0.07       2.1     218.0 d/f3_reg[15]/D           
+    0:00:23   30763.2      0.07       2.1     218.0 d/f15_reg[15]/D          
+    0:00:23   30764.2      0.07       2.1     218.0 d/f15_reg[15]/D          
+    0:00:23   30776.5      0.07       2.1     218.0 d/f6_reg[15]/D           
+    0:00:23   30782.3      0.07       2.0     218.0 d/f12_reg[15]/D          
+    0:00:23   30782.3      0.07       2.0     218.0 d/f4_reg[15]/D           
+    0:00:23   30784.7      0.07       2.0     218.0 d/f14_reg[15]/D          
+    0:00:23   30790.8      0.07       1.9     218.0 d/f15_reg[15]/D          
+    0:00:23   30802.3      0.06       1.9     218.0 d/f4_reg[15]/D           
+    0:00:23   30812.6      0.06       1.9     242.2 d/f4_reg[15]/D           
+    0:00:23   30817.2      0.06       1.9     242.2 d/f3_reg[15]/D           
+    0:00:24   30819.3      0.06       1.9     242.2 d/f8_reg[15]/D           
+    0:00:24   30826.2      0.06       1.9     242.2 d/f11_reg[15]/D          
+    0:00:24   30827.5      0.06       1.8     242.2 d/f2_reg[15]/D           
+    0:00:24   30836.8      0.06       1.8     242.2 d/f16_reg[15]/D          
+    0:00:24   30845.4      0.06       1.8     242.2 d/f6_reg[15]/D           
+    0:00:24   30859.5      0.06       1.7     266.4 d/f3_reg[15]/D           
+    0:00:24   30862.9      0.06       1.7     266.4 d/f15_reg[15]/D          
+    0:00:24   30867.7      0.06       1.7     266.4 d/f8_reg[15]/D           
+    0:00:24   30888.7      0.06       1.7     290.6 d/f2_reg[15]/D           
+    0:00:24   30890.6      0.06       1.7     290.6 d/f14_reg[15]/D          
+    0:00:24   30892.4      0.06       1.7     290.6 d/f8_reg[15]/D           
+    0:00:24   30892.4      0.06       1.7     290.6 d/f5_reg[15]/D           
+    0:00:24   30897.5      0.06       1.6     290.6 d/f6_reg[15]/D           
+    0:00:24   30899.4      0.06       1.6     290.6 d/f1_reg[15]/D           
+    0:00:24   30900.2      0.06       1.6     290.6 d/f11_reg[15]/D          
+    0:00:24   30905.2      0.05       1.6     290.6 d/f10_reg[15]/D          
+    0:00:24   30907.1      0.05       1.5     290.6 d/f12_reg[15]/D          
+    0:00:24   30908.1      0.05       1.5     290.6 d/f5_reg[15]/D           
+    0:00:24   30912.7      0.05       1.5     290.6 d/f15_reg[15]/D          
+    0:00:25   30915.3      0.05       1.5     290.6 d/f13_reg[15]/D          
+    0:00:25   30917.7      0.05       1.5     290.6 d/f1_reg[15]/D           
+    0:00:25   30923.6      0.05       1.5     290.6 d/f14_reg[15]/D          
+    0:00:25   30924.4      0.05       1.5     290.6 d/f12_reg[15]/D          
+    0:00:25   30926.2      0.05       1.5     290.6 d/f15_reg[15]/D          
+    0:00:25   30925.4      0.05       1.5     290.6 d/f8_reg[15]/D           
+    0:00:25   30925.7      0.05       1.4     290.6 d/f3_reg[15]/D           
+    0:00:25   30925.7      0.05       1.4     290.6 d/f6_reg[15]/D           
+    0:00:25   30926.8      0.05       1.4     290.6 d/f8_reg[15]/D           
+    0:00:25   30926.8      0.05       1.4     290.6 d/f5_reg[15]/D           
+    0:00:25   30927.8      0.05       1.4     290.6 d/f10_reg[15]/D          
+    0:00:25   30927.8      0.05       1.4     290.6 d/f12_reg[15]/D          
+    0:00:25   30935.8      0.05       1.4     290.6 d/f2_reg[15]/D           
+    0:00:25   30937.1      0.05       1.4     290.6 d/f5_reg[15]/D           
+    0:00:25   30939.8      0.05       1.4     290.6 d/f1_reg[15]/D           
+    0:00:25   30939.0      0.05       1.3     290.6 d/f11_reg[15]/D          
+    0:00:25   30943.5      0.05       1.3     290.6 d/f7_reg[15]/D           
+    0:00:25   30943.8      0.05       1.3     290.6 d/f16_reg[15]/D          
+    0:00:25   30946.7      0.05       1.3     290.6 d/f12_reg[15]/D          
+    0:00:25   30954.7      0.05       1.3     290.6 d/f9_reg[15]/D           
+    0:00:25   30959.5      0.05       1.3     290.6 d/f1_reg[15]/D           
+    0:00:26   30962.4      0.05       1.2     290.6 d/f14_reg[15]/D          
+    0:00:26   30964.0      0.04       1.2     290.6 d/f11_reg[15]/D          
+    0:00:26   30963.7      0.04       1.2     290.6 d/f6_reg[15]/D           
+    0:00:26   30965.3      0.04       1.2     290.6 d/f4_reg[15]/D           
+    0:00:26   30971.7      0.04       1.2     290.6 d/f15_reg[15]/D          
+    0:00:26   30977.3      0.04       1.2     289.9 d/f6_reg[15]/D           
+    0:00:26   30985.3      0.04       1.3     289.9 d/f13_reg[15]/D          
+    0:00:26   30990.6      0.04       1.2     289.9 d/f16_reg[15]/D          
+    0:00:26   31003.6      0.04       1.2     289.9 d/f9_reg[15]/D           
+    0:00:26   31010.8      0.04       1.1     289.9 d/f10_reg[14]/D          
+    0:00:26   31021.5      0.04       1.1     289.9 d/f4_reg[15]/D           
+    0:00:26   31023.6      0.04       1.1     289.9 d/f8_reg[15]/D           
+    0:00:26   31028.9      0.04       1.1     289.9 d/f16_reg[15]/D          
+    0:00:26   31033.2      0.03       1.1     289.9 d/f16_reg[15]/D          
+    0:00:27   31039.5      0.03       1.1     289.9 d/f1_reg[15]/D           
+    0:00:27   31057.1      0.03       1.0     314.1 d/f6_reg[15]/D           
+    0:00:27   31059.5      0.03       1.0     314.1 d/f6_reg[15]/D           
+    0:00:27   31066.9      0.03       1.0     314.1 d/f4_reg[15]/D           
+    0:00:27   31072.0      0.03       0.9     314.1 d/f16_reg[15]/D          
+    0:00:27   31072.5      0.03       0.9     314.1 d/f7_reg[15]/D           
+    0:00:27   31073.3      0.03       0.9     314.1 d/f4_reg[15]/D           
+    0:00:27   31073.3      0.03       0.9     314.1 d/f4_reg[15]/D           
+    0:00:27   31076.8      0.03       0.9     314.1 d/f16_reg[15]/D          
+    0:00:27   31082.9      0.03       0.9     314.1 d/f16_reg[15]/D          
+    0:00:27   31089.0      0.03       0.9     314.1 d/f14_reg[15]/D          
+    0:00:27   31093.0      0.03       0.8     314.1 d/f4_reg[15]/D           
+    0:00:27   31093.0      0.03       0.8     314.1 d/f4_reg[15]/D           
+    0:00:28   31094.9      0.03       0.8     314.1 d/f4_reg[15]/D           
+    0:00:28   31094.1      0.03       0.7     314.1 d/f2_reg[15]/D           
+    0:00:28   31092.7      0.03       0.7     314.1 d/f16_reg[15]/D          
+    0:00:28   31094.9      0.03       0.6     314.1 d/f12_reg[15]/D          
+    0:00:28   31095.4      0.03       0.6     314.1 d/f3_reg[15]/D           
+    0:00:28   31099.7      0.02       0.5     314.1 d/f4_reg[15]/D           
+    0:00:28   31104.7      0.02       0.5     314.1 d/f7_reg[15]/D           
+    0:00:28   31106.3      0.02       0.5     314.1 d/f11_reg[15]/D          
+    0:00:28   31109.0      0.02       0.5     314.1 d/f14_reg[15]/D          
+    0:00:29   31108.7      0.02       0.5     314.1 d/f11_reg[15]/D          
+    0:00:29   31113.0      0.02       0.4     314.1 d/f1_reg[15]/D           
+    0:00:29   31120.4      0.02       0.4     314.1 d/f16_reg[15]/D          
+    0:00:29   31121.5      0.02       0.4     314.1 d/f6_reg[15]/D           
+    0:00:29   31124.4      0.02       0.4     314.1 d/f6_reg[15]/D           
+    0:00:29   31129.7      0.02       0.4     314.1 d/f14_reg[15]/D          
+    0:00:29   31130.8      0.02       0.3     314.1 d/f8_reg[15]/D           
+    0:00:29   31132.6      0.02       0.3     314.1 d/f4_reg[15]/D           
+    0:00:29   31145.1      0.02       0.3     314.1 d/f9_reg[15]/D           
+    0:00:29   31144.9      0.02       0.3     314.1 d/f5_reg[15]/D           
+    0:00:29   31149.4      0.01       0.3     314.1 d/f3_reg[15]/D           
+    0:00:29   31151.5      0.01       0.3     314.1 d/f8_reg[15]/D           
+    0:00:29   31152.9      0.01       0.3     314.1 d/f4_reg[15]/D           
+    0:00:29   31156.0      0.01       0.3     314.1 d/f11_reg[15]/D          
+    0:00:29   31160.0      0.01       0.3     314.1 d/f11_reg[15]/D          
+    0:00:29   31170.7      0.01       0.3     337.7 d/f5_reg[15]/D           
+    0:00:29   31170.7      0.01       0.2     337.7 d/f5_reg[15]/D           
+    0:00:30   31173.9      0.01       0.2     337.7 d/f14_reg[15]/D          
+    0:00:30   31180.8      0.01       0.2     337.7 d/f13_reg[15]/D          
+    0:00:30   31181.8      0.01       0.2     337.7 d/f3_reg[15]/D           
+    0:00:30   31183.7      0.01       0.2     337.7 d/f8_reg[15]/D           
+    0:00:30   31182.4      0.01       0.2     337.7 d/f7_reg[15]/D           
+    0:00:30   31185.3      0.01       0.2     337.7 d/f11_reg[15]/D          
+    0:00:30   31191.4      0.01       0.2     337.7 d/f5_reg[15]/D           
+    0:00:30   31194.9      0.01       0.2     337.7 d/f16_reg[15]/D          
+    0:00:30   31196.2      0.01       0.2     337.7 d/f11_reg[15]/D          
+    0:00:30   31200.5      0.01       0.2     337.7 d/f2_reg[15]/D           
+    0:00:30   31200.5      0.01       0.2     337.7 d/f10_reg[15]/D          
+    0:00:30   31202.3      0.01       0.2     337.7 d/f12_reg[14]/D          
+    0:00:30   31202.6      0.01       0.1     337.7 d/f4_reg[15]/D           
+    0:00:30   31204.5      0.01       0.1     337.7 d/f11_reg[15]/D          
+    0:00:30   31206.6      0.01       0.1     337.7 d/f10_reg[15]/D          
+    0:00:30   31210.3      0.01       0.1     337.7 d/f14_reg[15]/D          
+    0:00:31   31210.6      0.01       0.1     337.7 d/f10_reg[15]/D          
+    0:00:31   31210.0      0.01       0.1     337.7 d/f9_reg[14]/D           
+    0:00:31   31212.4      0.01       0.1     337.7 d/f5_reg[15]/D           
+    0:00:31   31214.3      0.01       0.1     337.7 d/f4_reg[15]/D           
+    0:00:31   31218.0      0.01       0.1     337.7 d/f10_reg[15]/D          
+    0:00:31   31222.0      0.01       0.1     337.7 d/f15_reg[15]/D          
+    0:00:31   31221.7      0.01       0.1     337.7 d/f6_reg[15]/D           
+    0:00:31   31232.9      0.01       0.1     361.9 d/f7_reg[15]/D           
+    0:00:31   31233.5      0.01       0.1     361.9 d/f3_reg[15]/D           
+    0:00:31   31237.7      0.01       0.1     361.9 d/f14_reg[15]/D          
+    0:00:31   31241.7      0.00       0.1     361.9 d/f4_reg[15]/D           
+    0:00:31   31242.8      0.00       0.0     361.9 d/f10_reg[15]/D          
+    0:00:31   31246.8      0.00       0.0     361.9 d/f6_reg[15]/D           
+    0:00:31   31246.8      0.00       0.0     361.9 d/f8_reg[15]/D           
+    0:00:31   31239.6      0.00       0.0     337.7 d/f16_reg[15]/D          
+    0:00:31   31240.1      0.00       0.0     337.7 d/f12_reg[15]/D          
+    0:00:31   31240.6      0.00       0.0     337.7 d/f10_reg[15]/D          
+    0:00:31   31244.1      0.00       0.0     337.7 d/f10_reg[15]/D          
+    0:00:31   31248.1      0.00       0.0     337.7 d/f3_reg[15]/D           
+    0:00:32   31252.1      0.00       0.0     337.7 d/f1_reg[14]/D           
+    0:00:32   31255.5      0.00       0.0     337.7 d/f14_reg[15]/D          
+    0:00:32   31258.5      0.00       0.0     337.7 d/f8_reg[15]/D           
+    0:00:32   31260.6      0.00       0.0     337.7 d/f2_reg[15]/D           
+    0:00:32   31260.6      0.00       0.0     337.7 d/f11_reg[15]/D          
+    0:00:32   31261.4      0.00       0.0     337.7 d/f5_reg[15]/D           
+    0:00:32   31261.4      0.00       0.0     337.7 d/f10_reg[15]/D          
+    0:00:32   31265.4      0.00       0.0     337.7 d/f3_reg[15]/D           
+    0:00:32   31266.4      0.00       0.0     337.7                          
+    0:00:33   31265.1      0.00       0.0     337.7                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:33   31265.1      0.00       0.0     337.7                          
+    0:00:33   31149.7      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:33   31149.7      0.00       0.0       0.0                          
+    0:00:33   31149.7      0.00       0.0       0.0                          
+    0:00:33   31010.5      0.04       0.1       0.0                          
+    0:00:33   31002.6      0.04       0.1       0.0                          
+    0:00:33   31002.6      0.04       0.1       0.0                          
+    0:00:33   31002.6      0.04       0.1       0.0                          
+    0:00:33   31002.6      0.04       0.1       0.0                          
+    0:00:34   31006.0      0.03       0.1       0.0 d/f6_reg[15]/D           
+    0:00:34   31017.7      0.02       0.1       0.0                          
+    0:00:34   31031.8      0.01       0.0       0.0                          
+    0:00:34   31034.8      0.01       0.1       0.0                          
+    0:00:34   31039.3      0.01       0.1       0.0                          
+    0:00:34   31043.8      0.00       0.0       0.0                          
+    0:00:34   31049.1      0.00       0.0       0.0                          
+    0:00:34   31055.8      0.00       0.0       0.0                          
+    0:00:34   31060.0      0.00       0.0       0.0                          
+    0:00:34   31064.3      0.00       0.0       0.0                          
+    0:00:34   31064.8      0.00       0.0       0.0                          
+    0:00:34   31066.9      0.00       0.0       0.0                          
+    0:00:35   31068.5      0.00       0.0       0.0                          
+    0:00:35   31010.5      0.01       0.0       0.0                          
+    0:00:35   31010.0      0.01       0.0       0.0                          
+    0:00:35   31010.0      0.01       0.0       0.0                          
+    0:00:35   31010.0      0.01       0.0       0.0                          
+    0:00:35   31010.0      0.01       0.0       0.0                          
+    0:00:35   31010.0      0.01       0.0       0.0                          
+    0:00:35   31010.0      0.01       0.0       0.0                          
+    0:00:35   31010.5      0.00       0.0       0.0                          
+    0:00:35   30977.8      0.00       0.0       0.0                          
+    0:00:35   30943.2      0.00       0.0       0.0                          
+    0:00:35   30887.4      0.00       0.0       0.0                          
+    0:00:36   30872.2      0.00       0.0       0.0                          
+    0:00:36   30869.0      0.00       0.0       0.0                          
+    0:00:36   30864.2      0.00       0.0       0.0                          
+    0:00:36   30862.4      0.01       0.0       0.0                          
+    0:00:36   30862.4      0.01       0.0       0.0                          
+    0:00:36   30862.4      0.01       0.0       0.0                          
+    0:00:36   30862.4      0.01       0.0       0.0                          
+    0:00:36   30862.4      0.01       0.0       0.0                          
+    0:00:36   30862.4      0.01       0.0       0.0                          
+    0:00:37   30864.8      0.00       0.0       0.0                          
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'mvm_16_16_8_1' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'd/mem_a1/clk': 2937 load(s), 1 driver(s)
+1
+report_area
+ 
+****************************************
+Report : area
+Design : mvm_16_16_8_1
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  5 03:23:56 2015
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'mvm_16_16_8_1' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           30
+Number of nets:                           123
+Number of cells:                            2
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       2
+
+Combinational area:              17569.299895
+Buf/Inv area:                      695.589994
+Noncombinational area:           13295.477520
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 30864.777415
+Total area:                 undefined
+1
+report_power
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : mvm_16_16_8_1
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  5 03:23:58 2015
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mvm_16_16_8_1          5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =  12.0321 mW   (92%)
+  Net Switching Power  = 977.9022 uW    (8%)
+                         ---------
+Total Dynamic Power    =  13.0100 mW  (100%)
+
+Cell Leakage Power     = 661.5023 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       1.1653e+04          239.2358        2.2591e+05        1.2118e+04  (  88.64%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    379.2177          738.6638        4.3559e+05        1.5535e+03  (  11.36%)
+--------------------------------------------------------------------------------------------------
+Total          1.2032e+04 uW       977.8995 uW     6.6150e+05 nW     1.3671e+04 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mvm_16_16_8_1
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  5 03:23:58 2015
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: d/mem_x/data_out_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: d/f10_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mvm_16_16_8_1      5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  d/mem_x/data_out_reg[1]/CK (SDFF_X1)                    0.00 #     0.00 r
+  d/mem_x/data_out_reg[1]/Q (SDFF_X1)                     0.09       0.09 r
+  d/mem_x/data_out[1] (memory_WIDTH8_SIZE16_LOGSIZE4_0)
+                                                          0.00       0.09 r
+  d/U9/Z (BUF_X2)                                         0.07       0.16 r
+  d/mult_110/b[1] (datapath_DW_mult_tc_6)                 0.00       0.16 r
+  d/mult_110/U347/ZN (XNOR2_X1)                           0.07       0.23 r
+  d/mult_110/U345/ZN (OAI22_X1)                           0.04       0.27 f
+  d/mult_110/U15/CO (HA_X1)                               0.06       0.33 f
+  d/mult_110/U14/CO (FA_X1)                               0.09       0.42 f
+  d/mult_110/U191/ZN (NAND2_X1)                           0.04       0.47 r
+  d/mult_110/U192/ZN (NAND3_X1)                           0.04       0.50 f
+  d/mult_110/U197/ZN (NAND2_X1)                           0.04       0.54 r
+  d/mult_110/U198/ZN (NAND3_X1)                           0.04       0.58 f
+  d/mult_110/U200/ZN (NAND2_X1)                           0.03       0.61 r
+  d/mult_110/U202/ZN (NAND3_X1)                           0.04       0.64 f
+  d/mult_110/U10/CO (FA_X1)                               0.10       0.74 f
+  d/mult_110/U179/ZN (NAND2_X1)                           0.04       0.78 r
+  d/mult_110/U171/ZN (NAND3_X1)                           0.04       0.82 f
+  d/mult_110/U208/ZN (NAND2_X1)                           0.04       0.85 r
+  d/mult_110/U204/ZN (NAND3_X1)                           0.04       0.90 f
+  d/mult_110/U219/ZN (NAND2_X1)                           0.04       0.94 r
+  d/mult_110/U203/ZN (NAND3_X1)                           0.05       0.98 f
+  d/mult_110/U159/ZN (NAND2_X1)                           0.04       1.02 r
+  d/mult_110/U223/ZN (NAND3_X1)                           0.03       1.06 f
+  d/mult_110/U245/ZN (NAND2_X1)                           0.04       1.10 r
+  d/mult_110/U241/ZN (NAND3_X1)                           0.04       1.13 f
+  d/mult_110/U251/ZN (NAND2_X1)                           0.04       1.17 r
+  d/mult_110/U183/ZN (NAND3_X1)                           0.04       1.21 f
+  d/mult_110/U228/ZN (NAND2_X1)                           0.03       1.24 r
+  d/mult_110/U230/ZN (NAND3_X1)                           0.04       1.28 f
+  d/mult_110/U211/ZN (XNOR2_X1)                           0.06       1.34 f
+  d/mult_110/product[14] (datapath_DW_mult_tc_6)          0.00       1.34 f
+  d/add_111/B[14] (datapath_DW01_add_6)                   0.00       1.34 f
+  d/add_111/U11/Z (BUF_X1)                                0.04       1.38 f
+  d/add_111/U16/ZN (NAND2_X1)                             0.03       1.41 r
+  d/add_111/U17/ZN (NAND3_X1)                             0.04       1.44 f
+  d/add_111/U102/ZN (XNOR2_X1)                            0.05       1.50 f
+  d/add_111/SUM[15] (datapath_DW01_add_6)                 0.00       1.50 f
+  d/U839/ZN (NAND2_X1)                                    0.03       1.53 r
+  d/U36/ZN (NAND2_X1)                                     0.02       1.55 f
+  d/f10_reg[15]/D (DFF_X1)                                0.01       1.56 f
+  data arrival time                                                  1.56
+
+  clock clk (rise edge)                                   1.60       1.60
+  clock network delay (ideal)                             0.00       1.60
+  d/f10_reg[15]/CK (DFF_X1)                               0.00       1.60 r
+  library setup time                                     -0.04       1.56
+  data required time                                                 1.56
+  --------------------------------------------------------------------------
+  data required time                                                 1.56
+  data arrival time                                                 -1.56
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/skeni/ese507work/qn 9/k16p16b8g1/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...
